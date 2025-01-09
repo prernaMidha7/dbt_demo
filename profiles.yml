@@ -10,28 +10,28 @@ dbt_demo:
       type: snowflake
       user: dbt
       warehouse: COMPUTE_WH
-    prod:
-      account: qfdokfn-gt82220
-      database: RAW
-      password: dbtPassword123
-      role: TRANSFORM
-      schema: AIRBNB
-      threads: 1
-      type: snowflake
-      user: dbt
-      warehouse: COMPUTE_WH
+##     prod:
+##       account: qfdokfn-gt82220
+##       database: RAW
+##       password: dbtPassword123
+##       role: TRANSFORM
+##       schema: AIRBNB
+##       threads: 1
+##       type: snowflake
+##       user: dbt
+##       warehouse: COMPUTE_WH
   target: dev
 
-  dbt_demo1:
-  outputs:
-    dev:
-      account: qfdokfn-gt82220
-      database: RAW
-      password: dbtPassword123
-      role: TRANSFORM
-      schema: AIRBNB
-      threads: 1
-      type: snowflake
-      user: dbt
-      warehouse: COMPUTE_WH
-  target: dev
+##   dbt_demo1:
+##   outputs:
+##     dev:
+##       account: qfdokfn-gt82220
+##       database: RAW
+##       password: dbtPassword123
+##       role: TRANSFORM
+##       schema: AIRBNB
+##       threads: 1
+##       type: snowflake
+##       user: dbt
+##       warehouse: COMPUTE_WH
+##   target: dev

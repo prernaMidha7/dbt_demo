@@ -3,7 +3,7 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'dbt_demo'
---version: '1.0.0'
+## version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dbt_demo'
@@ -12,15 +12,15 @@ profile: 'dbt_demo'
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
-analysis-paths: ["analyses"]
-test-paths: ["tests"]
-seed-paths: ["seeds"]
+## analysis-paths: ["analyses"]
+## test-paths: ["tests"]
+## seed-paths: ["seeds"]
 macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
+## snapshot-paths: ["snapshots"]
 
-clean-targets:         # directories to be removed by `dbt clean`
-  - "target"
-  - "dbt_packages"
+## clean-targets:         # directories to be removed by `dbt clean`
+##   - "target"
+##   - "dbt_packages"
 
 
 # Configuring models
@@ -31,6 +31,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_demo:
+    staging:
+      +database: stg
+      +schema: airbnb
+      +materialized: table
+    integration:
+      +database: int
+      +schema: airbnb
+      +materialized: table      
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+##     example:
+##       +materialized: view
+##     staging:
+##      +materialized: view
+##       +database: stg #move data of schema named airbnb from raw db to stg db
+##       +schema: airbnb
